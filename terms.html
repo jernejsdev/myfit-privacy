@@ -1,212 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Terms of Use – MyFit</title>
-  <meta name="description" content="Terms of Use for the MyFit app. MyFit is a personal fitness app, provided as-is and not a source of medical advice." />
-  <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta property="og:title" content="Terms of Use – MyFit" />
-  <meta property="og:description" content="These Terms govern your use of the MyFit application." />
-  <meta property="og:type" content="website" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Use – MyFit App</title>
+  <meta name="description" content="Terms of Use for the MyFit App – rules for using the service." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%237c3aed'/%3E%3Cpath d='M22 58c14-2 24-22 28-22s14 24 28 26' stroke='%23fff' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='58' r='6' fill='%23fff'/%3E%3Ccircle cx='78' cy='62' r='6' fill='%23fff'/%3E%3C/svg%3E" />
   <style>
-    /* ====== Design tokens ====== */
-    :root{
-      /* default (dark) */
-      --bg: #0b0c10;
-      --surface: #0f1116;
-      --panel: #12141b;
-      --text: #e8eaf0;
-      --muted: #aeb4bf;
-      --brand: #5aa9e6;
-      --brand-2: #7c4dff;
-      --ok:#22c55e;
-      --warn:#f59e0b;
-      --border: #1f2430;
-      --ring: rgba(122,77,255,.35);
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+    /* ------------------------------
+       Design tokens (match Privacy)
+    ------------------------------ */
+    :root {
+      --bg: #ffffff;
+      --text: #0f172a;           /* slate-900 */
+      --muted: #64748b;          /* slate-500 */
+      --card: #ffffff;
+      --card-2: #f8fafc;         /* slate-50 */
+      --border: #e2e8f0;         /* slate-200 */
+      --accent: #7c3aed;         /* violet-600 */
+      --accent-2: #06b6d4;       /* cyan-500 */
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(2, 6, 23, .08);
     }
-    /* Light theme (manual toggle) */
-    :root[data-theme="light"]{
-      --bg: #f6f7fb;
-      --surface: #ffffff;
-      --panel: #ffffff;
-      --text: #111827;
-      --muted: #5b6577;
-      --brand:#2563eb;
-      --brand-2:#8b5cf6;
-      --border:#e6e8ef;
-      --ring: rgba(37,99,235,.25);
-      --shadow: 0 10px 28px rgba(23, 36, 63, .08);
-    }
-    /* Respect system preference on first load if no manual choice */
-    @media (prefers-color-scheme: light){
-      :root:not([data-theme]){
-        --bg: #f6f7fb;
-        --surface: #ffffff;
-        --panel: #ffffff;
-        --text: #111827;
-        --muted: #5b6577;
-        --brand:#2563eb;
-        --brand-2:#8b5cf6;
-        --border:#e6e8ef;
-        --ring: rgba(37,99,235,.25);
-        --shadow: 0 10px 28px rgba(23, 36, 63, .08);
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;           /* deep navy */
+        --text: #e5e7eb;         /* slate-200 */
+        --muted: #94a3b8;        /* slate-400 */
+        --card: #0f172a;         /* slate-900 */
+        --card-2: #0b1220;       
+        --border: #1e293b;       /* slate-800 */
+        --accent: #8b5cf6;       /* violet-500 */
+        --accent-2: #22d3ee;     /* cyan-400 */
+        --shadow: 0 10px 30px rgba(0,0,0,.45);
       }
     }
 
-    /* ====== Base ====== */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: var(--sans); color:var(--text); background:
-        radial-gradient(1200px 600px at 110% -10%, rgba(124,77,255,.12), transparent 60%),
-        radial-gradient(1200px 600px at -10% 0%, rgba(90,169,230,.12), transparent 60%),
-        var(--bg);
-      line-height:1.6;
+    /* ------------------------------
+       Base (match Privacy)
+    ------------------------------ */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    a{ color: var(--brand); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-    .container{ max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 24px; }
 
-    .sr-only{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
-
-    /* ====== Header / Hero ====== */
-    header{ position:relative; padding: 56px 0 24px; }
-    .hero{
-      border:1px solid var(--border);
-      background: linear-gradient(135deg, rgba(90,169,230,.16), rgba(124,77,255,.16));
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 28px;
+    /* ------------------------------
+       Hero (match Privacy)
+    ------------------------------ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 64px 0 56px;
+      background:
+        radial-gradient(1200px 400px at 80% -50%, color-mix(in srgb, var(--accent), transparent 80%), transparent),
+        radial-gradient(1000px 300px at -10% 0%, color-mix(in srgb, var(--accent-2), transparent 80%), transparent),
+        linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: #fff;
+      isolation: isolate;
     }
-    h1{
-      margin:0 0 8px;
-      font-size: clamp(28px, 4.6vw, 42px);
+    .hero::after{
+      content: "";
+      position: absolute; inset: 0; opacity: .08; pointer-events: none;
+      background-image: linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px);
+      background-size: 28px 28px; mask-image: radial-gradient(100% 100% at 50% 0%, black, transparent 70%);
+    }
+    .hero .title {
+      font-size: clamp(28px, 4vw, 44px);
       font-weight: 800;
-      letter-spacing:.2px;
-      background: linear-gradient(90deg, var(--brand), var(--brand-2));
-      -webkit-background-clip:text; background-clip:text; color: transparent;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
     }
-    .subtitle{ color:var(--muted); margin: 4px 0 12px; font-size: 15px;}
-    .chips{ display:flex; flex-wrap:wrap; gap:10px; color:var(--muted); font-size:14px; }
-    .chip{ border:1px solid var(--border); padding:6px 10px; border-radius:999px; background: rgba(255,255,255,.02); }
-    .actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;}
-    .btn{
-      appearance:none; border:1px solid var(--border); background:var(--panel); color:var(--text);
-      padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600;
+    .hero .subtitle { margin: 0; opacity: .95; font-size: clamp(14px, 2vw, 16px); }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.24);
+      color: #fff; padding: 6px 12px; border-radius: 999px; font-size: 12px; margin-top: 16px;
+      backdrop-filter: saturate(140%) blur(8px);
     }
-    .btn:hover{ box-shadow: 0 0 0 6px var(--ring); border-color: transparent; }
-    .btn.primary{ background: linear-gradient(90deg, var(--brand), var(--brand-2)); color:white; border: none; }
-    .notice{ margin-top: 12px; font-size: 14px; color: var(--muted); padding: 10px 12px; border:1px dashed var(--border); border-radius:12px; background:rgba(255,255,255,.02); }
+    .badge svg { width: 14px; height: 14px; }
 
-    /* ====== Layout: Sidebar + Content ====== */
-    .layout{ display:grid; grid-template-columns: 280px 1fr; gap: 22px; margin: 20px 0 60px; }
-    @media (max-width: 960px){ .layout{ grid-template-columns: 1fr; } }
-    .sidebar{ position: sticky; top: 16px; align-self: start; border:1px solid var(--border); background:var(--surface); border-radius:16px; padding:14px; }
-    .sidebar strong{ display:block; font-size:13px; color:var(--muted); margin-bottom:8px; }
-    .toc{ list-style:none; padding:0; margin:0; }
-    .toc li{ margin:6px 0; }
-    .toc a{ display:block; padding:8px 10px; border-radius:10px; border:1px solid transparent; text-decoration:none; color:inherit; }
-    .toc a.active{ background:linear-gradient(90deg, rgba(90,169,230,.16), rgba(124,77,255,.16)); border-color: transparent; }
-    .toc a:hover{ background:rgba(255,255,255,.04); }
+    /* ------------------------------
+       Layout: TOC + Article (match)
+    ------------------------------ */
+    .main { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    @media (min-width: 980px) {
+      .main { grid-template-columns: 280px 1fr; gap: 36px; }
+    }
 
-    main .section{ background:var(--surface); border:1px solid var(--border); border-radius: var(--radius); padding: 22px; margin-bottom: 14px; box-shadow: var(--shadow); opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
-    main .section.visible{ opacity:1; transform: translateY(0); }
-    h2{ margin:0 0 10px; font-size: clamp(20px, 3vw, 26px); display:flex; align-items:center; gap:10px; }
-    h2 .anchor{ visibility:hidden; font-family: var(--mono); font-size: 12px; border:1px solid var(--border); padding:2px 8px; border-radius: 999px; color:var(--muted); text-decoration:none; }
-    .section:hover h2 .anchor{ visibility:visible; }
-    p{ margin:10px 0; }
-    ul{ margin:8px 0 4px 20px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+    .article { padding: 28px; }
+    @media (min-width: 640px) { .article { padding: 36px; } }
 
-    /* ====== Footer ====== */
-    footer{ border-top:1px solid var(--border); padding:28px 0 60px; color:var(--muted); font-size:14px; }
-    footer .links a{ display:inline-block; margin-right:12px; padding:8px 12px; border:1px solid var(--border); border-radius:10px; text-decoration:none; color:inherit; }
+    /* Typography inside article */
+    .article h2 {
+      font-size: clamp(20px, 3vw, 26px);
+      margin: 24px 0 8px;
+    }
+    .article p { margin: 8px 0 12px; color: var(--text); }
+    .muted { color: var(--muted); }
 
-    /* ====== Utilities ====== */
-    .mono{ font-family: var(--mono); }
-    .right{ margin-left:auto }
-    .floating-top{ position: fixed; right: 18px; bottom: 18px; z-index: 30; display:none; }
-    .floating-top.show{ display:block; }
-    .floating-top .btn{ border-radius: 999px; padding: 12px 14px; }
+    /* Section anchor link */
+    .section {
+      scroll-margin-top: 96px;
+      position: relative;
+      padding-top: 4px;
+    }
+    .section .anchor-link {
+      opacity: 0; position: absolute; left: -24px; top: 0.4em; transition: opacity .2s ease;
+      display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 6px;
+      color: var(--muted);
+    }
+    .section:hover .anchor-link { opacity: 1; }
+
+    /* Lists */
+    ul { padding-left: 1.2rem; }
+    li { margin: 6px 0; }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { display: grid; grid-template-columns: 24px 1fr; align-items: start; gap: 10px; }
+    .checklist svg { margin-top: 4px; }
+
+    /* TOC */
+    nav.toc.card { padding: 18px; position: relative; }
+    nav.toc h3 { margin: 0 0 10px; font-size: 14px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+    .toc a { display: block; padding: 8px 10px; border-radius: 8px; color: var(--text); text-decoration: none; }
+    .toc a[aria-current="true"], .toc a:hover { background: color-mix(in srgb, var(--accent), transparent 88%); color: var(--text); }
+    @media (min-width: 980px) {
+      nav.toc { position: sticky; top: 24px; align-self: start; }
+    }
+
+    /* Footer */
+    footer.card { margin-top: 24px; padding: 20px; color: var(--muted); }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed; right: 20px; bottom: 20px; z-index: 50; opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: all .2s ease; border: 1px solid var(--border); background: var(--card);
+      border-radius: 999px; box-shadow: var(--shadow);
+      padding: 10px 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 
     /* Print */
-    @media print{ header .actions, .sidebar, .floating-top { display:none !important; } body{ background:white; } main .section{ break-inside: avoid; box-shadow:none; } }
+    @media print {
+      .hero { background: none; color: #000; }
+      nav.toc, .back-to-top { display: none !important; }
+      .card { border: none; box-shadow: none; }
+      a { color: #000; text-decoration: underline; }
+      body { background: #fff; color: #000; }
+    }
 
-    /* Focus */
-    :focus-visible{ outline: 3px solid var(--ring); outline-offset: 3px; border-radius: 8px; }
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
-  <a href="#content" class="sr-only">Skip to content</a>
-
-  <header class="container">
-    <div class="hero">
-      <h1>Terms of Use</h1>
-      <div class="subtitle">These Terms govern your use of the <strong>MyFit</strong> application.</div>
-      <div class="chips">
-        <span class="chip">Effective date: <time datetime="2025-09-05">05 September 2025</time></span>
-        <span class="chip">Status: <span style="color:var(--ok);font-weight:700">Active</span></span>
-        <span class="chip">Jurisdiction: Slovenia</span>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="badge" aria-label="App Name">
+        <!-- dumbbell icon -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 10v4m18-4v4M7 8v8M17 8v8M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        MyFit • Terms of Use
       </div>
-
-      <div class="actions">
-        <button class="btn primary" id="printBtn" aria-label="Print or Save as PDF">🖨️ Print / Save PDF</button>
-        <button class="btn" id="themeBtn" aria-label="Toggle theme">🌗 Toggle theme</button>
-        <a class="btn" href="https://jernejsdev.github.io/myfit-privacy">🔐 Privacy Policy</a>
-        <a class="btn right" href="#contact">📬 Contact</a>
+      <h1 class="title">Terms of Use</h1>
+      <p class="subtitle">Rules for using MyFit.</p>
+      <div class="badge" style="margin-top:12px">
+        <!-- clock icon -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Last updated: <time datetime="2025-09-05">05 September 2025</time>
       </div>
-
-      <p class="notice"><strong>Summary.</strong> MyFit is a personal fitness app. It does <em>not</em> provide medical advice and is offered <span class="mono">“as is”</span>.</p>
     </div>
   </header>
 
-  <div class="container layout">
-    <!-- Sidebar -->
-    <aside class="sidebar" aria-label="Table of contents">
-      <strong>Jump to</strong>
-      <ul class="toc" id="toc">
-        <li><a href="#acceptance">Acceptance of Terms</a></li>
-        <li><a href="#eligibility">Eligibility</a></li>
-        <li><a href="#health-disclaimer">Health Disclaimer</a></li>
-        <li><a href="#account-security">Account &amp; Security</a></li>
-        <li><a href="#acceptable-use">Acceptable Use</a></li>
-        <li><a href="#subscriptions">Subscription &amp; Payments</a></li>
-        <li><a href="#ip">Intellectual Property</a></li>
-        <li><a href="#user-content">User Content</a></li>
-        <li><a href="#privacy">Privacy</a></li>
-        <li><a href="#service-changes">Service Changes</a></li>
-        <li><a href="#warranties">Disclaimer of Warranties</a></li>
-        <li><a href="#liability">Limitation of Liability</a></li>
-        <li><a href="#termination">Termination</a></li>
-        <li><a href="#law">Governing Law</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </aside>
+  <main class="container main" id="top">
+    <!-- TOC -->
+    <nav class="toc card" aria-label="On this page">
+      <h3>On this page</h3>
+      <ul id="toc-list"></ul>
+    </nav>
 
-    <!-- Content -->
-    <main id="content">
+    <!-- Article -->
+    <article class="card article" aria-labelledby="terms-title">
+      <h1 id="terms-title" class="sr-only" style="position:absolute;left:-9999px;">Terms of Use – MyFit App</h1>
+
+      <section id="intro" class="section">
+        <p class="muted">We keep these terms short and readable. If anything is unclear, <a href="#contact">contact us</a>.</p>
+        <div class="callout" role="note" aria-label="Summary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 9v4m0 4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <div><strong>Summary.</strong> MyFit is a personal fitness app. It does <em>not</em> provide medical advice and is offered “as is”.</div>
+        </div>
+      </section>
+
       <section id="acceptance" class="section">
-        <h2>1) Acceptance of Terms <a class="anchor" href="#acceptance" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#acceptance" aria-label="Copy link to section">#</a>
+        <h2>1. Acceptance of Terms</h2>
         <p>By downloading, accessing, or using MyFit, you agree to these Terms of Use and to our <a href="https://jernejsdev.github.io/myfit-privacy">Privacy Policy</a>. If you do not agree, do not use the app.</p>
       </section>
 
       <section id="eligibility" class="section">
-        <h2>2) Eligibility <a class="anchor" href="#eligibility" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#eligibility" aria-label="Copy link to section">#</a>
+        <h2>2. Eligibility</h2>
         <p>You must be at least <strong>16 years old</strong> to use MyFit, or have the consent and supervision of a parent or legal guardian.</p>
       </section>
 
       <section id="health-disclaimer" class="section">
-        <h2>3) Health Disclaimer <a class="anchor" href="#health-disclaimer" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#health-disclaimer" aria-label="Copy link to section">#</a>
+        <h2>3. Health Disclaimer</h2>
         <p>Information in MyFit is for general fitness tracking only. It is <strong>not</strong> medical or nutritional advice. Always consult a qualified healthcare professional before starting any exercise or nutrition program. You use the app and perform any activities at your own risk.</p>
       </section>
 
       <section id="account-security" class="section">
-        <h2>4) Account &amp; Security <a class="anchor" href="#account-security" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#account-security" aria-label="Copy link to section">#</a>
+        <h2>4. Account &amp; Security</h2>
         <ul>
           <li>You are responsible for providing accurate information and for keeping your login credentials secure.</li>
           <li>We may suspend or delete accounts that violate these Terms or applicable laws.</li>
@@ -214,7 +239,8 @@
       </section>
 
       <section id="acceptable-use" class="section">
-        <h2>5) Acceptable Use <a class="anchor" href="#acceptable-use" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#acceptable-use" aria-label="Copy link to section">#</a>
+        <h2>5. Acceptable Use</h2>
         <p>You agree not to:</p>
         <ul>
           <li>attempt to access, probe, or breach the service or its security;</li>
@@ -224,132 +250,147 @@
       </section>
 
       <section id="subscriptions" class="section">
-        <h2>6) Subscription &amp; Payments <a class="anchor" href="#subscriptions" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#subscriptions" aria-label="Copy link to section">#</a>
+        <h2>6. Subscription &amp; Payments</h2>
         <p>If paid features are introduced in the future, prices, billing periods, and cancellation policies will be clearly shown in-app or on the store listing. Taxes and third-party fees may apply.</p>
       </section>
 
       <section id="ip" class="section">
-        <h2>7) Intellectual Property <a class="anchor" href="#ip" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#ip" aria-label="Copy link to section">#</a>
+        <h2>7. Intellectual Property</h2>
         <p>The MyFit name, logo, software, and related content are protected by intellectual-property laws. No license is granted to copy, modify, distribute, or commercially exploit any part of MyFit without prior written consent.</p>
       </section>
 
       <section id="user-content" class="section">
-        <h2>8) User Content <a class="anchor" href="#user-content" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#user-content" aria-label="Copy link to section">#</a>
+        <h2>8. User Content</h2>
         <p>Content you enter (e.g., workout logs) remains yours. You grant us a limited, revocable license to process and display that content solely to operate and improve the service. You may delete your content by deleting your account, subject to any legal obligations to retain data.</p>
       </section>
 
       <section id="privacy" class="section">
-        <h2>9) Privacy <a class="anchor" href="#privacy" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#privacy" aria-label="Copy link to section">#</a>
+        <h2>9. Privacy</h2>
         <p>How we collect and process personal data is described in our <a href="https://jernejsdev.github.io/myfit-privacy">Privacy Policy</a>.</p>
       </section>
 
       <section id="service-changes" class="section">
-        <h2>10) Service Changes &amp; Updates <a class="anchor" href="#service-changes" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#service-changes" aria-label="Copy link to section">#</a>
+        <h2>10. Service Changes &amp; Updates</h2>
         <p>We may update, temporarily suspend, or discontinue the service at any time. Where feasible, we will aim to provide advance notice and maintain stability.</p>
-        <p><em>Changes to these Terms:</em> We may revise these Terms from time to time. The “Effective date” above will be updated, and continued use after changes means you accept the updated Terms.</p>
+        <p><em>Changes to these Terms:</em> We may revise these Terms from time to time. The “Last updated” date above will be updated, and continued use after changes means you accept the updated Terms.</p>
       </section>
 
       <section id="warranties" class="section">
-        <h2>11) Disclaimer of Warranties <a class="anchor" href="#warranties" aria-label="Copy link to section">#</a></h2>
-        <p>MyFit is provided on an <span class="mono">“as is”</span> and <span class="mono">“as available”</span> basis, without warranties of any kind, express or implied.</p>
+        <a class="anchor-link" href="#warranties" aria-label="Copy link to section">#</a>
+        <h2>11. Disclaimer of Warranties</h2>
+        <p>MyFit is provided on an “as is” and “as available” basis, without warranties of any kind, express or implied.</p>
       </section>
 
       <section id="liability" class="section">
-        <h2>12) Limitation of Liability <a class="anchor" href="#liability" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#liability" aria-label="Copy link to section">#</a>
+        <h2>12. Limitation of Liability</h2>
         <p>To the maximum extent permitted by law, MyFit and its maintainers shall not be liable for any indirect, incidental, consequential, special, or punitive damages, or for any loss of data or profits, arising from or related to your use of the service.</p>
       </section>
 
       <section id="termination" class="section">
-        <h2>13) Termination <a class="anchor" href="#termination" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#termination" aria-label="Copy link to section">#</a>
+        <h2>13. Termination</h2>
         <p>You may stop using the app and delete your account at any time. We may terminate or suspend access for violations of these Terms or for legal/regulatory reasons.</p>
       </section>
 
       <section id="law" class="section">
-        <h2>14) Governing Law <a class="anchor" href="#law" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#law" aria-label="Copy link to section">#</a>
+        <h2>14. Governing Law</h2>
         <p>Unless mandatory law in your country of residence requires otherwise, these Terms are governed by the laws of Slovenia, without regard to conflict-of-laws principles.</p>
       </section>
 
       <section id="contact" class="section">
-        <h2>15) Contact <a class="anchor" href="#contact" aria-label="Copy link to section">#</a></h2>
+        <a class="anchor-link" href="#contact" aria-label="Copy link to section">#</a>
+        <h2>15. Contact</h2>
         <p>Questions? Email <a href="mailto:jernejsdev@gmail.com">jernejsdev@gmail.com</a>.</p>
-        <p style="font-size:13px;color:var(--muted)">This page is for informational purposes only and does not constitute legal advice.</p>
       </section>
-    </main>
-  </div>
 
-  <div class="floating-top" id="toTop">
-    <button class="btn" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
-  </div>
+      <footer class="card" style="background:transparent;border:none;box-shadow:none;padding:0;margin-top:8px;">
+        <hr style="border:none;border-top:1px solid var(--border); margin: 24px 0;" />
+        <p class="muted">© 2025 MyFit. All rights reserved. · <a href="https://jernejsdev.github.io/myfit-privacy">Privacy Policy</a></p>
+      </footer>
+    </article>
+  </main>
 
-  <footer class="container">
-    <div class="links">
-      <a href="https://jernejsdev.github.io/myfit-privacy">Privacy Policy</a>
-      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</a>
-    </div>
-    <p>© <span id="y"></span> MyFit. All rights reserved.</p>
-  </footer>
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 19V5m0 0l-5 5m5-5l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    Top
+  </button>
 
   <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Build TOC from h2s (same logic as Privacy)
+    (function() {
+      const headings = Array.from(document.querySelectorAll('.article h2'));
+      const tocList = document.getElementById('toc-list');
+      const links = [];
 
-    // Print
-    document.getElementById('printBtn').addEventListener('click', () => window.print());
+      headings.forEach(h => {
+        const section = h.closest('.section');
+        const id = (section && section.id) ? section.id : h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
+        if (section && !section.id) section.id = id;
 
-    // Theme toggle (persists)
-    const root = document.documentElement;
-    const themeBtn = document.getElementById('themeBtn');
-    const preferred = localStorage.getItem('theme');
-    if (preferred) root.dataset.theme = preferred;
-    themeBtn.addEventListener('click', () => {
-      const now = (root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light')) === 'light' ? 'dark' : 'light';
-      root.dataset.theme = now; localStorage.setItem('theme', now);
-    });
-    const observerTheme = new MutationObserver(() => {
-      const dark = (root.dataset.theme || '').includes('dark') || (matchMedia('(prefers-color-scheme: dark)').matches && !root.dataset.theme);
-      document.querySelector('meta[name="theme-color"][media*="dark"]')?.setAttribute('content', dark ? '#0b0c10' : '#ffffff');
-    });
-    observerTheme.observe(root, { attributes: true });
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = h.textContent.replace(/^\d+\.\s*/, '');
+        li.appendChild(a);
+        tocList.appendChild(li);
+        links.push(a);
+      });
 
-    // Reveal on scroll
-    const reveal = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: .08 });
-    document.querySelectorAll('.section').forEach(s=>reveal.observe(s));
-
-    // Scrollspy
-    const tocLinks = [...document.querySelectorAll('.toc a')];
-    const headings = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
-    const spy = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        const id = '#' + e.target.id;
-        const link = tocLinks.find(a => a.getAttribute('href')===id);
-        if (e.isIntersecting) {
-          tocLinks.forEach(l=>l.classList.remove('active'));
-          link?.classList.add('active');
-          history.replaceState(null,'',id);
+      // Smooth scroll for in-page links
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          history.pushState(null, '', '#' + id);
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
-    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
-    headings.forEach(h=>h && spy.observe(h));
 
-    // Copy anchor when clicking the tiny "#" button
-    document.querySelectorAll('h2 .anchor').forEach(btn=>{
-      btn.addEventListener('click', (ev)=>{
-        ev.preventDefault();
-        const url = location.origin + location.pathname + btn.getAttribute('href');
-        navigator.clipboard.writeText(url).then(()=> {
-          btn.textContent = '✓';
-          setTimeout(()=> btn.textContent = '#', 900);
+      // Active section highlight
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + id ? 'true' : 'false'));
+          }
         });
-      });
-    });
+      }, { rootMargin: '-50% 0px -40% 0px', threshold: 0.01 });
 
-    // Show "Back to top" after scroll
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      toTop.classList.toggle('show', window.scrollY > 700);
-    });
+      document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
+
+      // Back to top visibility
+      const btn = document.getElementById('backToTop');
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      const toggleBtn = () => { (window.scrollY > 400) ? btn.classList.add('show') : btn.classList.remove('show'); };
+      window.addEventListener('scroll', toggleBtn, { passive: true });
+      toggleBtn();
+
+      // Inject visible anchor buttons like Privacy
+      document.querySelectorAll('.section').forEach(sec => {
+        const h2 = sec.querySelector('h2');
+        const id = sec.id;
+        const existing = sec.querySelector('.anchor-link');
+        if (h2 && id && !existing) {
+          const link = document.createElement('a');
+          link.className = 'anchor-link';
+          link.href = '#' + id;
+          link.setAttribute('aria-label', 'Copy link to section');
+          link.textContent = '#';
+          h2.insertAdjacentElement('beforebegin', link);
+        }
+      });
+    })();
   </script>
 </body>
 </html>
