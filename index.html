@@ -3,10 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy – MyFit App</title>
-  <meta name="description" content="Privacy Policy for the MyFit App – how we collect, use, and protect your data." />
+  <title>Privacy Policy – Setwise</title>
+  <meta name="description" content="Privacy Policy for the Setwise app – how we collect, use, and protect your data." />
   <meta name="color-scheme" content="light dark" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/privacy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Privacy Policy – Setwise" />
+  <meta property="og:description" content="How Setwise collects, uses and protects your data." />
+  <meta property="og:url" content="https://example.com/privacy" />
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%237c3aed'/%3E%3Cpath d='M22 58c14-2 24-22 28-22s14 24 28 26' stroke='%23fff' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='58' r='6' fill='%23fff'/%3E%3Ccircle cx='78' cy='62' r='6' fill='%23fff'/%3E%3C/svg%3E" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%237c3aed'/%3E%3Cpath d='M22 58c14-2 24-22 28-22s14 24 28 26' stroke='%23fff' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='58' r='6' fill='%23fff'/%3E%3Ccircle cx='78' cy='62' r='6' fill='%23fff'/%3E%3C/svg%3E" />
+
   <style>
     /* ------------------------------
        Design tokens
@@ -37,6 +47,9 @@
       }
     }
 
+    /* Optional blue theme: add class="theme-blue" to <body> to switch */
+    .theme-blue { --accent:#2563eb; --accent-2:#38bdf8; }
+
     /* ------------------------------
        Base
     ------------------------------ */
@@ -54,6 +67,10 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 24px; }
+
+    /* Skip link */
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px; background: var(--card); color: var(--text); border:1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow); z-index: 100; }
 
     /* ------------------------------
        Hero
@@ -99,34 +116,18 @@
       .main { grid-template-columns: 280px 1fr; gap: 36px; }
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-    }
+    .card { background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: var(--radius); }
     .article { padding: 28px; }
     @media (min-width: 640px) { .article { padding: 36px; } }
 
     /* Typography inside article */
-    .article h2 {
-      font-size: clamp(20px, 3vw, 26px);
-      margin: 24px 0 8px;
-    }
+    .article h2 { font-size: clamp(20px, 3vw, 26px); margin: 24px 0 8px; }
     .article p { margin: 8px 0 12px; color: var(--text); }
     .muted { color: var(--muted); }
 
     /* Section anchor link */
-    .section {
-      scroll-margin-top: 96px; /* space for smooth scroll under sticky areas */
-      position: relative;
-      padding-top: 4px;
-    }
-    .section .anchor-link {
-      opacity: 0; position: absolute; left: -24px; top: 0.4em; transition: opacity .2s ease;
-      display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 6px;
-      color: var(--muted);
-    }
+    .section { scroll-margin-top: 96px; position: relative; padding-top: 4px; }
+    .section .anchor-link { opacity: 0; position: absolute; left: -24px; top: 0.4em; transition: opacity .2s ease; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 6px; color: var(--muted); }
     .section:hover .anchor-link { opacity: 1; }
 
     /* Lists */
@@ -137,12 +138,7 @@
     .checklist svg { margin-top: 4px; }
 
     /* Callout */
-    .callout {
-      border: 1px solid var(--border);
-      background: var(--card-2);
-      padding: 16px 18px; border-radius: 12px; margin: 16px 0 8px; color: var(--text);
-      display: flex; align-items: start; gap: 12px;
-    }
+    .callout { border: 1px solid var(--border); background: var(--card-2); padding: 16px 18px; border-radius: 12px; margin: 16px 0 8px; color: var(--text); display: flex; align-items: start; gap: 12px; }
 
     /* Table of contents */
     nav.toc.card { padding: 18px; position: relative; }
@@ -150,20 +146,13 @@
     .toc ul { list-style: none; margin: 0; padding: 0; }
     .toc a { display: block; padding: 8px 10px; border-radius: 8px; color: var(--text); text-decoration: none; }
     .toc a[aria-current="true"], .toc a:hover { background: color-mix(in srgb, var(--accent), transparent 88%); color: var(--text); }
-    @media (min-width: 980px) {
-      nav.toc { position: sticky; top: 24px; align-self: start; }
-    }
+    @media (min-width: 980px) { nav.toc { position: sticky; top: 24px; align-self: start; } }
 
     /* Footer */
     footer.card { margin-top: 24px; padding: 20px; color: var(--muted); }
 
     /* Back to top */
-    .back-to-top {
-      position: fixed; right: 20px; bottom: 20px; z-index: 50; opacity: 0; visibility: hidden; transform: translateY(8px);
-      transition: all .2s ease; border: 1px solid var(--border); background: var(--card);
-      border-radius: 999px; box-shadow: var(--shadow);
-      padding: 10px 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
-    }
+    .back-to-top { position: fixed; right: 20px; bottom: 20px; z-index: 50; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .2s ease; border: 1px solid var(--border); background: var(--card); border-radius: 999px; box-shadow: var(--shadow); padding: 10px 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
     .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 
     /* Print */
@@ -176,26 +165,26 @@
     }
 
     /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
-    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
   </style>
 </head>
 <body>
+  <a href="#top" class="skip-link">Skip to content</a>
+
   <!-- Hero -->
   <header class="hero">
     <div class="container">
       <div class="badge" aria-label="App Name">
         <!-- dumbbell icon -->
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 10v4m18-4v4M7 8v8M17 8v8M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        MyFit • Privacy Policy
+        Setwise • Privacy Policy
       </div>
       <h1 class="title">Privacy Policy</h1>
-      <p class="subtitle">How MyFit collects, uses and protects your data.</p>
+      <p class="subtitle">How Setwise collects, uses and protects your data.</p>
       <div class="badge" style="margin-top:12px">
         <!-- clock icon -->
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        Last updated: <time datetime="2025-09-05">05 September 2025</time>
+        Last updated: <time datetime="2025-09-11">11 September 2025</time>
       </div>
     </div>
   </header>
@@ -204,27 +193,25 @@
     <!-- TOC -->
     <nav class="toc card" aria-label="On this page">
       <h3>On this page</h3>
-      <ul id="toc-list">
-        <!-- populated by JS from headings below -->
-      </ul>
+      <ul id="toc-list"><!-- populated by JS --></ul>
     </nav>
 
     <!-- Article -->
     <article class="card article" aria-labelledby="policy-title">
-      <h1 id="policy-title" class="sr-only" style="position:absolute;left:-9999px;">Privacy Policy – MyFit App</h1>
+      <h1 id="policy-title" class="sr-only" style="position:absolute;left:-9999px;">Privacy Policy – Setwise</h1>
 
       <section id="intro" class="section">
         <p class="muted">We keep this policy concise and readable. If anything is unclear, <a href="#contact">contact us</a>—we’ll help.</p>
         <div class="callout" role="note" aria-label="Important">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 9v4m0 4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <div><strong>We never sell your data.</strong> We only use it to operate and improve MyFit.</div>
+          <div><strong>We never sell your data.</strong> We only use it to operate and improve Setwise.</div>
         </div>
       </section>
 
       <section id="information-we-collect" class="section">
         <a class="anchor-link" href="#information-we-collect" aria-label="Copy link to section">#</a>
         <h2>1. Information We Collect</h2>
-        <p>MyFit only collects the minimum data required to provide core functionality:</p>
+        <p>Setwise only collects the minimum data required to provide core functionality:</p>
         <ul class="checklist">
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -243,38 +230,93 @@
             <span>Optional user feedback (including attachments)</span>
           </li>
         </ul>
+        <p class="muted">We do not collect sensitive categories (health diagnoses, political opinions, etc.).</p>
       </section>
 
       <section id="how-we-use-data" class="section">
         <a class="anchor-link" href="#how-we-use-data" aria-label="Copy link to section">#</a>
         <h2>2. How We Use Your Data</h2>
-        <p>We use your data solely to provide and improve the app experience. We do <strong>not</strong> sell or share your data with third parties, except trusted service providers (e.g., Supabase) who help us operate the app.</p>
+        <p>We use your data solely to provide and improve the app experience. We do <strong>not</strong> sell or share your data with third parties, except trusted service providers who help us operate the app (e.g., hosting and authentication).</p>
+        <ul>
+          <li>Authenticate your account and keep you signed in.</li>
+          <li>Sync your workouts and preferences across devices.</li>
+          <li>Diagnose bugs and prevent abuse (basic logs).</li>
+          <li>Respond when you contact support.</li>
+        </ul>
+      </section>
+
+      <section id="lawful-bases" class="section">
+        <a class="anchor-link" href="#lawful-bases" aria-label="Copy link to section">#</a>
+        <h2>3. Lawful Bases (GDPR/EEA)</h2>
+        <p>If you are in the EU/EEA, our processing is based on:</p>
+        <ul>
+          <li><strong>Contract:</strong> to provide the Setwise service you've requested.</li>
+          <li><strong>Legitimate interests:</strong> to secure the service and improve performance.</li>
+          <li><strong>Consent:</strong> for optional features where required (we'll ask clearly first).</li>
+        </ul>
       </section>
 
       <section id="data-security" class="section">
         <a class="anchor-link" href="#data-security" aria-label="Copy link to section">#</a>
-        <h2>3. Data Security</h2>
-        <p>All sensitive information (such as passwords) is securely encrypted. We apply industry‑standard practices to protect your data.</p>
+        <h2>4. Data Security</h2>
+        <p>All sensitive information (such as passwords) is securely hashed/encrypted in transit and at rest where applicable. We apply industry‑standard practices to protect your data.</p>
+      </section>
+
+      <section id="retention" class="section">
+        <a class="anchor-link" href="#retention" aria-label="Copy link to section">#</a>
+        <h2>5. Data Retention</h2>
+        <p>We retain account data for as long as your account is active. You can delete your account at any time (see below). Backups and logs are kept for a limited time for security and recovery, after which they are purged.</p>
+      </section>
+
+      <section id="your-rights" class="section">
+        <a class="anchor-link" href="#your-rights" aria-label="Copy link to section">#</a>
+        <h2>6. Your Rights</h2>
+        <p>Depending on your location, you may have rights to:</p>
+        <ul>
+          <li>Access, correct, or delete your data.</li>
+          <li>Object to or restrict certain processing.</li>
+          <li>Receive a copy of your data (portability).</li>
+          <li>Withdraw consent where processing relies on consent.</li>
+        </ul>
+        <p>To exercise any right, contact us at <a href="mailto:jernejsdev@gmail.com">jernejsdev@gmail.com</a>. EU users can lodge a complaint with the <em>Informacijski pooblaščenec</em> (Slovenian Information Commissioner) or your local authority.</p>
+      </section>
+
+      <section id="international-transfers" class="section">
+        <a class="anchor-link" href="#international-transfers" aria-label="Copy link to section">#</a>
+        <h2>7. International Transfers</h2>
+        <p>If data is processed outside your country, we use appropriate safeguards (e.g., contracts with standard clauses) to protect it according to applicable law.</p>
       </section>
 
       <section id="account-and-deletion" class="section">
         <a class="anchor-link" href="#account-and-deletion" aria-label="Copy link to section">#</a>
-        <h2>4. Account &amp; Data Deletion</h2>
+        <h2>8. Account &amp; Data Deletion</h2>
         <p>You may request deletion of your account and all associated data at any time by contacting us:</p>
         <p><strong>Email:</strong> <a href="mailto:jernejsdev@gmail.com">jernejsdev@gmail.com</a></p>
-        <p>All data will be permanently removed within <strong>30 days</strong> of your request.</p>
+        <p>All data will be permanently removed within <strong>30 days</strong> of your request, subject to necessary security backups that are purged on their regular cycle.</p>
+      </section>
+
+      <section id="children" class="section">
+        <a class="anchor-link" href="#children" aria-label="Copy link to section">#</a>
+        <h2>9. Children’s Privacy</h2>
+        <p>Setwise is not directed to children under 13, and we do not knowingly collect personal data from them. If you believe a child has provided us personal data, please contact us to remove it.</p>
+      </section>
+
+      <section id="changes" class="section">
+        <a class="anchor-link" href="#changes" aria-label="Copy link to section">#</a>
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this policy to reflect changes to the app or legal requirements. We will update the “Last updated” date and, if changes are significant, provide a notice in‑app.</p>
       </section>
 
       <section id="contact" class="section">
         <a class="anchor-link" href="#contact" aria-label="Copy link to section">#</a>
-        <h2>5. Contact Us</h2>
+        <h2>11. Contact Us</h2>
         <p>If you have any questions about this Privacy Policy, please contact us at:</p>
         <p><strong>Email:</strong> <a href="mailto:jernejsdev@gmail.com">jernejsdev@gmail.com</a></p>
       </section>
 
       <footer class="card" style="background:transparent;border:none;box-shadow:none;padding:0;margin-top:8px;">
         <hr style="border:none;border-top:1px solid var(--border); margin: 24px 0;" />
-        <p class="muted">© 2025 MyFit. All rights reserved.</p>
+        <p class="muted">© 2025 Setwise. All rights reserved. · <a href="/terms">Terms</a></p>
       </footer>
     </article>
   </main>
@@ -293,35 +335,30 @@
       const links = [];
 
       headings.forEach(h => {
-        const id = h.parentElement.id || h.id;
         const section = h.closest('.section');
-        const targetId = section && section.id ? section.id : (id || h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'));
+        const targetId = section && section.id ? section.id : (h.id || h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'));
         if (!section) { h.setAttribute('id', targetId); }
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = '#' + targetId;
-        a.textContent = h.textContent.replace(/^\d+\.\s*/, '');
+        a.textContent = h.textContent.replace(/^[0-9]+\.\s*/, '');
         li.appendChild(a);
         tocList.appendChild(li);
         links.push(a);
       });
 
-      // Smooth scroll
-      function smoothTo(hash) {
-        const el = document.getElementById(hash);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      // Smooth scroll + focus for a11y
       document.addEventListener('click', (e) => {
         const a = e.target.closest('a[href^="#"]');
         if (!a) return;
         const id = a.getAttribute('href').slice(1);
-        if (id) {
-          const target = document.getElementById(id);
-          if (target) {
-            e.preventDefault();
-            history.pushState(null, '', '#' + id);
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          history.pushState(null, '', '#' + id);
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const h2 = target.querySelector('h2');
+          if (h2) { h2.setAttribute('tabindex', '-1'); h2.focus({ preventScroll: true }); }
         }
       });
 
@@ -340,9 +377,7 @@
       // Back to top button logic
       const btn = document.getElementById('backToTop');
       btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-      const toggleBtn = () => {
-        if (window.scrollY > 400) { btn.classList.add('show'); } else { btn.classList.remove('show'); }
-      };
+      const toggleBtn = () => { if (window.scrollY > 400) { btn.classList.add('show'); } else { btn.classList.remove('show'); } };
       window.addEventListener('scroll', toggleBtn, { passive: true });
       toggleBtn();
 
